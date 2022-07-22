@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    height: 5.5vh;
+    width: 100%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+}
+nav{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav ul li{
+    padding: 10px;
+    margin: 5px;
+    list-style: none;
+    text-align: center;
+    color: black;
+}
+
+.bg{
+    width: 100vw;
+}
+
+.card_container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.card {
+    width: 20vw;
+    height: 55vh;
+    border-radius: 5px;
+    margin: 20px;
+    cursor: pointer;
+    justify-content: center;
+}
+.card:hover{
+    border: 2px solid #222;
+}
+.card-img {
+    background-color: chartreuse;
+    width: 90%;
+    height: 70%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.card-img-1 {
+    background-image: url(./assets/argentina.webp);
+    background-size: cover;
+}
+
+.card-img-2 {
+    background-image: url(./assets/manunited.webp);
+}
+
+.card-img-3 {
+    background-image: url(./assets/ajax.webp);
+}
+
+.card-img-4 {
+    background-image: url(./assets/mick--2021-soymotor.jpg);
+}
+.card-title {
+    color: #222;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.btn{
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 600;
+    margin: auto;
+    min-height: 3.25em;
+    min-width: 0;
+    outline: none;
+    padding: 0.8em 2em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    touch-action: manipulation;
+    will-change: transform;
+}
+.btn:disabled {
+    pointer-events: none;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
