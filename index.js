@@ -88,7 +88,7 @@
 //     comprar(nombre, mail, tel, productosCarrito)};
 
 const btnAnadirCarrito = document.querySelectorAll(".btn");
-const bodyCarrito = document.querySelector(."bodyCarrito")
+const bodyCarrito = document.querySelector(".bodyCarrito")
 let carrito = [];
 btnAnadirCarrito.forEach(btn =>{
   btn.addEventListener("click", anadirItemCarrito)
@@ -115,9 +115,17 @@ function anadirItemCarrito(nuevoItem){
 }
 
 function cargarCarrito(){
-  bodyCarrito.innerHTML = "";
+  bodyCarrito.innerHTML = '';
   carrito.map(item => {
-    const container = document.createElement("container");
-    container.classList.add(ItemCarrito)
+    let card_container = document.createElement("card_container");
+    card_container.classList.add("ItemCarrito");
+    const Content = `<div class="card card-2">
+    <div class="card-img card-img-2"></div>
+    <h4 class="card-title">${item.titulo}</h4>
+    <p class="precio">${item.precio}</p>
+    <input type="number" min="1" value=${item.cantidad}
+</div>`
+    card_container = Content;
+    bodyCarrito.append(card_container)
   })
 }

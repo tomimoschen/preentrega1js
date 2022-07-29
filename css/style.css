@@ -77,20 +77,23 @@ nav ul li{
 }
 
 .card-img-1 {
-    background-image: url(./assets/argentina.webp);
+    background-image: url(../assets/argentina.webp);
     background-size: cover;
 }
 
 .card-img-2 {
-    background-image: url(./assets/manunited.webp);
+    background-image: url(../assets/manunited.webp);
+    background-size: cover;
 }
 
 .card-img-3 {
-    background-image: url(./assets/ajax.webp);
+    background-image: url(../assets/ajax.webp);
+    background-size: cover;
 }
 
 .card-img-4 {
     background-image: url(./assets/mick--2021-soymotor.jpg);
+    background-size: cover;
 }
 .card-title {
     color: #222;
