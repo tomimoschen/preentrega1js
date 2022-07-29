@@ -29,9 +29,15 @@
             </ul>
         </nav>
         <div class="iconoCarrito">
-            <a href="#bodyCarrito"><i class="fa-solid fa-cart-shopping iconoCarrito2"></i></a>
+            <a href="#Carrito"><i class="fa-solid fa-cart-shopping iconoCarrito2"></i></a>
         </div>
     </header>
+    <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+        Producto Añadido al carrito!
+        </div>
+        <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+        Producto removido!
+        </div>
     <div>
         <img class="bg" src="./assets/bg.webp" alt="">
     </div>
@@ -65,9 +71,9 @@
                 <button id="anadirAlCarrito" class="btn">comprar</button>
             </div>
         </section>
-        <section class="bodyCarrito">
-        
-        </section>
+        <h1 id="Carrito">Carrito</h1>
+        <div class="carritoHtml card_container">
+        </div>
     </main>
     <footer>
         <div>
