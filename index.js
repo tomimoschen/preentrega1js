@@ -215,9 +215,5 @@ function addLocalStorage(){
 }
 
 window.onload = function(){
-  const storage = JSON.parse(localStorage.getItem('carrito'));
-  if(storage){
-    carrito = storage;
-    renderCarrito()
-  }
+  const storage = JSON.parse(localStorage.getItem('carrito')) || []
 }
