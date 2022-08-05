@@ -115,27 +115,11 @@ function addToCarritoItem(e){
 
 
 function addItemCarrito(newItem){
-
-  const alert = document.querySelector('.alert')
-
-  // setTimeout( function(){
-  //   alert.classList.add('hide')
-  // }, 2000)
-  //   alert.classList.remove('hide')
-
-  // const InputElemnto = div.getElementsByClassName('input__elemento')
-  // for(let i =0; i < carrito.length ; i++){
-  //   if(carrito[i].title.trim() === newItem.title.trim()){
-  //     carrito[i].cantidad ++;
-  //     const inputValue = InputElemnto[i]
-  //     inputValue.value++;
-  //     CarritoTotal()
-  //     return null;
-  //   }
-  // }
-  
+  swal("Producto añadido", "El producto selecionado fue añadido con éxito!", "success",{
+    buttons: false,
+    timer: 1500,
+  });
   carrito.push(newItem)
-  
   renderCarrito()
 } 
 
@@ -193,7 +177,7 @@ function renderCarrito(){
 //   }, 2000)
 //     alert.classList.remove('remove')
 
-//   tr.remove()
+//   div.remove()
 //   CarritoTotal()
 // }
 
