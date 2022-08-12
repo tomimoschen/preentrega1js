@@ -87,48 +87,81 @@
 //     let tel = prompt('Ingrese su telefono');
 //     comprar(nombre, mail, tel, productosCarrito)};
 
-const Clickbutton = document.querySelectorAll('.btn')
-const carritoHtml = document.querySelector('.carritoHtml')
-let carrito = []
-
-Clickbutton.forEach(btn => {
-  btn.addEventListener('click', addToCarritoItem)
+const Clickbutton = document.querySelectorAll(".btn");
+const carritoHtml = document.querySelector(".carritoHtml");
+let carrito = [];
+fetch("data.json")
+.then(response => response.json())
+.then(data => {
+  let contenedor = document.getElementById("contenedor")
+  contenedor.innerHTML = ` <div class="card card-1">
+  <div class="card-img card-img-1"></div>
+  <h4 class="card-title">${data.name}</h4>
+  <p class="precio">$${data.price}</p>
+  <button id="anadirAlCarrito" class="btn">comprar</button>
+</div>
+<div class="card card-2">
+  <div class="card-img card-img-1"></div>
+  <h4 class="card-title">${data.name1}</h4>
+  <p class="precio">$${data.price1}</p>
+  <button id="anadirAlCarrito" class="btn">comprar</button>
+</div>
+<div class="card card-3">
+  <div class="card-img card-img-1"></div>
+  <h4 class="card-title">${data.name2}</h4>
+  <p class="precio">$${data.price2}</p>
+  <button id="anadirAlCarrito" class="btn">comprar</button>
+</div>
+<div class="card card-4">
+  <div class="card-img card-img-1"></div>
+  <h4 class="card-title">${data.name3}</h4>
+  <p class="precio">$${data.price3}</p>
+  <button id="anadirAlCarrito" class="btn">comprar</button>
+</div>
+  `;
 })
+.catch(error => swal("Error", "ha ocurrido un error inesperado", "warning"));
 
+Clickbutton.forEach((btn) => {
+  btn.addEventListener("click", addToCarritoItem);
+});
 
-function addToCarritoItem(e){
-  const button = e.target
-  const item = button.closest('.card')
-  const itemTitle = item.querySelector('.card-title').textContent;
-  const itemPrice = item.querySelector('.precio').textContent;
-  const itemImg = item.querySelector('.card-img').src;
-  
+function addToCarritoItem(e) {
+  const button = e.target;
+  const item = button.closest(".card");
+  const itemTitle = item.querySelector(".card-title").textContent;
+  const itemPrice = item.querySelector(".precio").textContent;
+  const itemImg = item.querySelector(".card-img").src;
+
   const newItem = {
     title: itemTitle,
     precio: itemPrice,
     img: itemImg,
-    cantidad: 1
-  }
+    cantidad: 1,
+  };
 
-  addItemCarrito(newItem)
+  addItemCarrito(newItem);
 }
 
+function addItemCarrito(newItem) {
+  swal(
+    "Producto añadido",
+    "El producto selecionado fue añadido con éxito!",
+    "success",
+    {
+      buttons: false,
+      timer: 1500,
+    }
+  );
+  carrito.push(newItem);
+  renderCarrito();
+}
 
-function addItemCarrito(newItem){
-  swal("Producto añadido", "El producto selecionado fue añadido con éxito!", "success",{
-    buttons: false,
-    timer: 1500,
-  });
-  carrito.push(newItem)
-  renderCarrito()
-} 
-
-
-function renderCarrito(){
-  carritoHtml.innerHTML = ''
-  carrito.map(item => {
-    const div = document.createElement('div')
-    div.classList.add('ItemCarrito')
+function renderCarrito() {
+  carritoHtml.innerHTML = "";
+  carrito.map((item) => {
+    const div = document.createElement("div");
+    div.classList.add("ItemCarrito");
     const Content = `
     <div class="card card-1">
                 <div class="card-img card-img-1">${item.img}</div>
@@ -137,13 +170,13 @@ function renderCarrito(){
                 <button class="delete btn btn-danger">x</button>
                 </div>
     
-    `
+    `;
     div.innerHTML = Content;
-    carritoHtml.append(div)
+    carritoHtml.append(div);
 
     // div.querySelector(".delete").addEventListener('click', removeItemCarrito)
     // div.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
-  })
+  });
   // CarritoTotal()
 }
 
@@ -194,10 +227,10 @@ function renderCarrito(){
 //   })
 // }
 
-function addLocalStorage(){
-  localStorage.setItem('carrito', JSON.stringify(carrito))
+function addLocalStorage() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-window.onload = function(){
-  const storage = JSON.parse(localStorage.getItem('carrito')) || []
-}
+window.onload = function () {
+  const storage = JSON.parse(localStorage.getItem("carrito")) || [];
+};

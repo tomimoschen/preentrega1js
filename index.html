@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://kit.fontawesome.com/4265e05029.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -32,57 +32,23 @@
             <a href="#Carrito"><i class="fa-solid fa-cart-shopping iconoCarrito2"></i></a>
         </div>
     </header>
-    <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
-        Producto Añadido al carrito!
-        </div>
-        <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
-        Producto removido!
-        </div>
     <div>
-        <img class="bg" src="./assets/bg.webp" alt="">
+        <img class="bg" src="./assets/bg.webp" alt="" />
     </div>
     <h1>Camisetas</h1>
     <h3>Encontrá la camiseta que buscabas!</h3>
     <main>
-        <section class="card_container">
-            <div class="card card-1">
-                <div class="card-img card-img-1"></div>
-                <h4 class="card-title">Argentina titular</h4>
-                <p class="precio">$150</p>
-                <button id="anadirAlCarrito" class="btn">comprar</button>
-            </div>
-            <div class="card card-2">
-                <div class="card-img card-img-2"> </div>
-                <h4 class="card-title">Manchester United</h4>
-                <p class="precio">$120</p>
-                <button id="anadirAlCarrito" class="btn">comprar</button>
-            </div>
-            <div class="card card-3">
-                <div class="card-img card-img-3"></div>
-                <h4 class="card-title">Ajax</h4>
-                <p class="precio">$100</p>
-                <button id="anadirAlCarrito" class="btn">comprar</button>
-            </div>
-
-            <div class="card card-4">
-                <div class="card-img card-img-3"></div>
-                <h4 class="card-title">Brasil</h4>
-                <p class="precio">$150</p>
-                <button id="anadirAlCarrito" class="btn">comprar</button>
-            </div>
+        <section class="card_container" id="contenedor">
         </section>
         <h1 id="Carrito">Carrito</h1>
-        <div class="carritoHtml card_container">
-        </div>
+        <div class="carritoHtml card_container"></div>
     </main>
     <footer>
-        <div>
-        </div>
-        <div>
-            © 2021 Camisetas
-        </div>
+        <div></div>
+        <div>© 2021 Camisetas</div>
     </footer>
     <!-- SCRIPTS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="index.js"></script>
     <script src="https://kit.fontawesome.com/4265e05029.js" crossorigin="anonymous"></script>
 </body>
